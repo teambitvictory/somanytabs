@@ -1,0 +1,28 @@
+{
+  "name": "somanytabs",
+  "description": "Save tab groups or all tabs inside a window as a single bookmark.",
+  "version": "0.1",
+  "manifest_version": 3,
+  "permissions": [
+    "tabs",
+    "tabGroups",
+    "bookmarks"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost:8081/*",
+        "https://smt.bitvictory.dev/*"
+      ],
+      "js": [
+        "page/content.js"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  }
+}
