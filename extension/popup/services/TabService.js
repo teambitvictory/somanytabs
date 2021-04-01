@@ -1,3 +1,4 @@
+
 const getTabsForCurrentWindow = async () => {
   const openTabs = await chrome.tabs.query({
     currentWindow: true,
