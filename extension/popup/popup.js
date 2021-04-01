@@ -1,27 +1,39 @@
-import { createBookmark } from './services/BookmarkService.js';
-import { getActiveGroupInfo, getTabsForCurrentWindow, generateBookmarkName } from './services/TabService.js';
+import { createBookmark, generateBookmarkName } from './services/BookmarkService.js';
+import { getActiveGroupInfo, getTabsForCurrentWindow } from './services/TabService.js';
 
-const getBookmarkTitle = async (payload) => ((document.getElementById('inputTitle').value) ? document.getElementById('inputTitle').value : await generateBookmarkName(payload.tabs.length));
+const getTitleInput = () => document.getElementById('inputTitle');
+
+const getBookmarkTitle = async (numberOfTabs) => ((getTitleInput().value)
+  ? getTitleInput().value : generateBookmarkName(numberOfTabs));
+
+const prepareUI = async () => {
+  const groupInfo = await getActiveGroupInfo();
+  if (groupInfo) {
+    document.getElementById('group-btn').disabled = false;
+  }
+  if (groupInfo && groupInfo.title && groupInfo.title.length) {
+    getTitleInput().placeholder = groupInfo.title;
+  } else {
+    const tabs = await getTabsForCurrentWindow();
+    const title = await getBookmarkTitle(tabs.length);
+    getTitleInput().placeholder = title;
+  }
+};
 
 const awake = async () => {
-  const groupInfo = await getActiveGroupInfo();
-  if (groupInfo && groupInfo.title) {
-    document.getElementById('inputTitle').value = groupInfo.title;
-  } else {
-    document.getElementById('group-btn').disabled = true;
-  }
+  prepareUI();
 
   document.getElementById('all-btn').addEventListener('click', async () => {
     const payload = {
       tabs: await getTabsForCurrentWindow(),
     };
-    const title = await getBookmarkTitle(payload);
+    const title = getTitleInput().placeholder;
     createBookmark(title, payload);
   });
 
   document.getElementById('group-btn').addEventListener('click', async () => {
     const payload = await getActiveGroupInfo();
-    const title = await getBookmarkTitle(payload);
+    const title = getTitleInput().placeholder;
     createBookmark(title, payload);
   });
 };

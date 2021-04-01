@@ -8,4 +8,11 @@ const createBookmark = (title, urlPayload) => {
   });
 };
 
-export { createBookmark };
+const generateBookmarkName = async (numberOfTabs) => {
+  const currentTab = (await chrome.tabs.query({ active: true, currentWindow: true }))[0];
+  const date = new Date().toLocaleDateString('en-US');
+  const tabs = (numberOfTabs === 1) ? 'Tab' : 'Tabs';
+  return `[${numberOfTabs} ${tabs}] ${date} - ${currentTab.title}`;
+};
+
+export { createBookmark, generateBookmarkName };

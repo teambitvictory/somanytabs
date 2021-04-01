@@ -5,12 +5,6 @@ const getTabsForCurrentWindow = async () => {
   return openTabs.map((tab) => tab.url);
 };
 
-const generateBookmarkName = async (numberOfTabs) => {
-  const currentTab = (await chrome.tabs.query({ active: true, currentWindow: true }))[0];
-  const date = new Date().toLocaleDateString('en-US');
-  return `[${numberOfTabs} Tabs] ${date} - ${currentTab.title}`;
-};
-
 const getActiveGroupInfo = async () => {
   const currentTab = (await chrome.tabs.query({ active: true, currentWindow: true }))[0];
   const { groupId } = currentTab;
@@ -34,4 +28,4 @@ const getActiveGroupInfo = async () => {
   return groupInfoPromise;
 };
 
-export { getTabsForCurrentWindow, getActiveGroupInfo, generateBookmarkName };
+export { getTabsForCurrentWindow, getActiveGroupInfo };
