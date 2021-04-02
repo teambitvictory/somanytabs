@@ -27,13 +27,19 @@ const awake = async () => {
     const payload = {
       tabs: await getTabsForCurrentWindow(),
     };
-    const title = getTitleInput().placeholder;
+    let title = getTitleInput().placeholder;
+    if (getTitleInput().value && getTitleInput().value.length) {
+      title = getTitleInput().value;
+    }
     createBookmark(title, payload);
   });
 
   document.getElementById('group-btn').addEventListener('click', async () => {
     const payload = await getActiveGroupInfo();
-    const title = getTitleInput().placeholder;
+    let title = getTitleInput().placeholder;
+    if (getTitleInput().value && getTitleInput().value.length) {
+      title = getTitleInput().value;
+    }
     createBookmark(title, payload);
   });
 };
