@@ -1,6 +1,8 @@
 const addTabsToGroups = async (originalTabId, url, originalIndex) => {
   const session = (new URLSearchParams((new URL(url)).search)).get('session');
-  const { tabs, title, color } = JSON.parse(decodeURIComponent(session));
+  const {
+    isGroup, tabs, title, color,
+  } = JSON.parse(decodeURIComponent(session));
 
   // Open tabs
   const createdTabs = await Promise.all(tabs.map((tabUrl, offset) => chrome.tabs.create({
@@ -9,13 +11,15 @@ const addTabsToGroups = async (originalTabId, url, originalIndex) => {
   })));
 
   // Create group
-  const groupId = await chrome.tabs.group({
-    tabIds: createdTabs.map((tab) => tab.id),
-  });
-  await chrome.tabGroups.update(groupId, {
-    color,
-    title,
-  });
+  if (isGroup) {
+    const groupId = await chrome.tabs.group({
+      tabIds: createdTabs.map((tab) => tab.id),
+    });
+    await chrome.tabGroups.update(groupId, {
+      color,
+      title,
+    });
+  }
 
   // Close the original tab
   chrome.tabs.remove(originalTabId);
