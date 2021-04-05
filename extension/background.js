@@ -27,7 +27,7 @@ const addTabsToGroups = async (originalTabId, url, originalIndex) => {
 
 chrome.runtime.onMessage.addListener(
   (request, sender, sendResponse) => {
-    if (request !== 'CREATE_TABS') {
+    if (request !== 'OPEN_TABS') {
       return;
     }
     const { id, url, index } = sender.tab;
