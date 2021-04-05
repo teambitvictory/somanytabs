@@ -2,5 +2,7 @@
 // This is quite dirty but an easy way to avoid script injection
 document.body.setAttribute('extension-available', true);
 
-// Inform the bg script to handle the payload
-chrome.runtime.sendMessage('CREATE_TABS', () => {});
+document.body.addEventListener('OPEN_TABS', () => {
+  // Inform the bg script to handle the payload
+  chrome.runtime.sendMessage('OPEN_TABS', () => {});
+}, false);

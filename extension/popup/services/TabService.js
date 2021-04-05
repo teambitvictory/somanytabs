@@ -20,6 +20,7 @@ const getActiveGroupInfo = async () => {
       })).filter((tab) => tab.groupId === groupId);
       return resolve({
         tabs: openTabs.map((tab) => tab.url),
+        isGroup: true,
         title,
         color,
       });
