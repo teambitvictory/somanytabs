@@ -8,8 +8,9 @@ const getBookmarkTitle = async (numberOfTabs) => ((getTitleInput().value)
 
 const prepareUI = async () => {
   const groupInfo = await getActiveGroupInfo();
-  if (groupInfo) {
-    document.getElementById('group-btn').disabled = false;
+  if (!groupInfo) {
+    const element = document.getElementById('group-btn');
+    element.classList.add('opacity-50');
   }
   if (groupInfo && groupInfo.title && groupInfo.title.length) {
     getTitleInput().placeholder = groupInfo.title;

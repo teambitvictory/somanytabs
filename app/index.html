@@ -7,26 +7,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>somanytabs</title>
   <link href="main.css" rel="stylesheet">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="logo.svg">
+
 </head>
 
-<body>
-  <h1>somanytabs</h1>
+<body class="font-sans bg-gray-800 text-white">
+  <div class=" flex items-center w-full min-h-screen py-3 px-4 ">
+    <div class="mx-auto object-center max-w-prose">
+      <h1 class="text-5xl mt-3">somanytabs</h1>
 
-  <div id="extension">
-    Get the <a href="#">chrome extension</a> to restore saved groups.
+      <div class="mx-5">
+        <div id="extension" class="my-5">
+          Get the <a href="#">chrome extension</a> to restore saved groups.
+        </div>
+
+        <div id="permission" class="my-5">
+          Could not open bookmark because pop-ups were blocked. Please allow popups for bitvictory.dev and refresh the page.
+        </div>
+
+        <div id="confirmation" class="my-5">
+          <p class="mb-2">Are you sure you want to open the following urls:</p>
+          <ul class="mb-2 mx-5 list-disc" id="confirmation-url-list"></ul>
+          <p class="mb-2 mt-8">We remember your trusted bookmarks with a cookie.</p>
+          <button id="confirmation-btn" class="p-2 my-2 whitespace-nowrap border border-transparent rounded shadow text-sm text-white bg-pink-600 hover:bg-pink-700">Open bookmark</button>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div id="permission">
-    Could not open bookmark because pop-ups were blocked. Please allow popups for bitvictory.dev and refresh the page.
-  </div>
-
-  <div id="confirmation">
-    <p>Are you sure you want to open the following urls:</p>
-    <ul id="confirmation-url-list"></ul>
-    <p>We remember your trusted bookmarks with a cookie.</p>
-    <button id="confirmation-btn">Open bookmark</button>
-  </div>
-
   <script src="index.js"></script>
 </body>
 

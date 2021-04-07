@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?> <!-- Created with Vectornator for iOS (http://vectornator.io/) --><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg height="100%" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" xmlns:vectornator="http://vectornator.io" version="1.1" viewBox="0 0 512 512">
+<metadata>
+<vectornator:setting key="DisplayWhiteBackground" value="0"/>
+<vectornator:setting key="RulersVisible" value="1"/>
+<vectornator:setting key="Units" value="Pixels"/>
+<vectornator:setting key="New" value="1"/>
+<vectornator:setting key="DynamicGuides" value="0"/>
+<vectornator:setting key="GuidesVisible" value="1"/>
+<vectornator:setting key="SnapToPoints" value="0"/>
+<vectornator:setting key="SnapToGrid" value="0"/>
+<vectornator:setting key="SnapToGuides" value="1"/>
+<vectornator:setting key="DimensionsVisible" value="1"/>
+<vectornator:setting key="SnapToEdges" value="0"/>
+</metadata>
+<defs/>
+<g id="Tab11" vectornator:layerName="Tab11">
+<path stroke="#911247" stroke-width="1" d="M402.162+150.506L385.675+100.384L308.573+100.19L291.624+150.657" fill="#911247" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+</g>
+<g id="Tab3" vectornator:layerName="Tab3">
+<path stroke="#a81552" stroke-width="1" d="M307.816+150.506L291.329+100.384L214.227+100.19L197.278+150.658" fill="#a81552" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+</g>
+<g id="Tab2" vectornator:layerName="Tab2">
+<path stroke="#be185d" stroke-width="1" d="M213.388+150.506L196.901+100.384L119.799+100.19L102.85+150.658" fill="#be185d" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+</g>
+<g id="Bookmark" vectornator:layerName="Bookmark">
+<path stroke="#bf185d" stroke-width="1" d="M102.94+150L102.906+451.617L252.569+348.158L402.382+450.876L401.926+150.239" fill="#bf185d" stroke-linecap="butt" opacity="1" stroke-linejoin="round"/>
+</g>
+</svg>
