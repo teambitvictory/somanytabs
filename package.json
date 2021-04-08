@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "deploy": "git subtree push --prefix app origin gh-pages"
+    "deploy": "npx gh-pages -d app"
   },
   "devDependencies": {
     "eslint": "^7.23.0",
