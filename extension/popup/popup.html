@@ -1,23 +1,29 @@
 <html>
+
 <head>
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
+
 <body class="font-sans px-3 bg-gray-800 pb-3">
   <h1 class="text-2xl mt-3 text-white">somanytabs</h1>
   <div class="mt-4">
     <label for="inputTitle" class="text-sm text-gray-200 mb-0.5">Bookmark name</label>
     <input type="text" id="inputTitle" name="inputTitle" class="w-full p-1 my-2 mb-1 mt-0 relative rounded shadow">
     <div class="grid grid-flow-col auto-cols-auto">
-      <button id="all-btn" class="p-1 my-2 mr-4 whitespace-nowrap border border-transparent rounded shadow text-sm text-white bg-pink-600 hover:bg-pink-700">
-        Collect all tabs
+      <button id="all-btn"
+        class="p-1 my-2 mr-4 whitespace-nowrap border border-transparent rounded shadow text-sm text-white bg-pink-600 hover:bg-pink-700">
+        Bookmark all tabs
       </button>
-      <button id="group-btn" class="p-1 my-2 whitespace-nowrap border border-transparent rounded shadow text-sm text-white bg-pink-600 hover:bg-pink-700">
-        Collect group tabs
+      <button id="group-btn"
+        class="p-1 my-2 whitespace-nowrap border border-transparent rounded shadow text-sm text-white bg-pink-600 hover:bg-pink-700">
+        Bookmark group tabs
       </button>
     </div>
-    <div  id="success_message" class="grid grid-flow-col auto-cols-auto justify-start items-center hidden">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    <div id="success_message" class="grid grid-flow-col auto-cols-auto justify-start items-center hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white mr-2" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
       <p class="text-sm text-white">Bookmark was created.</p>
     </div>

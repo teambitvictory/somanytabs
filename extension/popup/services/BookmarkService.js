@@ -1,5 +1,5 @@
 const createBookmark = (title, urlPayload) => {
-  const BASE_URL = 'http://localhost:8081';
+  const BASE_URL = 'https://smt.bitvictory.dev';
   const url = `${BASE_URL}?session=${encodeURIComponent(JSON.stringify(urlPayload))}`;
   chrome.bookmarks.create({
     url,
