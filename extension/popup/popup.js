@@ -11,6 +11,7 @@ const prepareUI = async () => {
   if (!groupInfo) {
     const element = document.getElementById('group-btn');
     element.classList.add('opacity-50');
+    element.disabled = true;
   }
   if (groupInfo && groupInfo.title && groupInfo.title.length) {
     getTitleInput().placeholder = groupInfo.title;
@@ -19,6 +20,11 @@ const prepareUI = async () => {
     const title = await getBookmarkTitle(tabs.length);
     getTitleInput().placeholder = title;
   }
+};
+
+const showSuccessMessage = () => {
+  const element = document.getElementById('success_message');
+  element.classList.remove('hidden');
 };
 
 const awake = async () => {
@@ -33,6 +39,7 @@ const awake = async () => {
       title = getTitleInput().value;
     }
     createBookmark(title, payload);
+    showSuccessMessage();
   });
 
   document.getElementById('group-btn').addEventListener('click', async () => {
@@ -42,6 +49,7 @@ const awake = async () => {
       title = getTitleInput().value;
     }
     createBookmark(title, payload);
+    showSuccessMessage();
   });
 };
 

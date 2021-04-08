@@ -6,10 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>somanytabs</title>
-  <link href="main.css" rel="stylesheet">
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   <link rel="icon" href="logo.svg">
-
 </head>
 
 <body class="font-sans bg-gray-800 text-white">
@@ -18,15 +16,15 @@
       <h1 class="text-5xl mt-3">somanytabs</h1>
 
       <div class="mx-5">
-        <div id="extension" class="my-5">
+        <div id="extension" class="my-5 hidden">
           Get the <a href="#">chrome extension</a> to restore saved groups.
         </div>
 
-        <div id="permission" class="my-5">
+        <div id="permission" class="my-5 hidden">
           Could not open bookmark because pop-ups were blocked. Please allow popups for bitvictory.dev and refresh the page.
         </div>
 
-        <div id="confirmation" class="my-5">
+        <div id="confirmation" class="my-5 hidden">
           <p class="mb-2">Are you sure you want to open the following urls:</p>
           <ul class="mb-2 mx-5 list-disc" id="confirmation-url-list"></ul>
           <p class="mb-2 mt-8">We remember your trusted bookmarks with a cookie.</p>
