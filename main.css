@@ -1,3 +1,7 @@
-#extension, #permission, #confirmation {
-  display: none;
+a {
+  text-decoration: underline !important;
+}
+
+footer {
+  margin-top: 64px;
 }

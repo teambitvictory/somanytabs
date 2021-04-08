@@ -6,33 +6,51 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>somanytabs</title>
-  <link href="main.css" rel="stylesheet">
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link href="main.css" rel="stylesheet">
   <link rel="icon" href="logo.svg">
-
 </head>
 
 <body class="font-sans bg-gray-800 text-white">
-  <div class=" flex items-center w-full min-h-screen py-3 px-4 ">
+  <div class="flex items-center w-full min-h-screen py-3 px-4" id="main">
     <div class="mx-auto object-center max-w-prose">
       <h1 class="text-5xl mt-3">somanytabs</h1>
 
       <div class="mx-5">
-        <div id="extension" class="my-5">
-          Get the <a href="#">chrome extension</a> to restore saved groups.
+        <div id="landing" class="my-5 hidden">
+          Save tab groups or all tabs inside a window as a single bookmark.<br>
+          Get the <a href="https://chrome.google.com/webstore/detail/somanytabs/plaemndclncijicmigphlnhdpjcfhbej">chrome
+            extension</a> to get started.
         </div>
 
-        <div id="permission" class="my-5">
-          Could not open bookmark because pop-ups were blocked. Please allow popups for bitvictory.dev and refresh the page.
+        <div id="extension" class="my-5 hidden">
+          Get the <a href="https://chrome.google.com/webstore/detail/somanytabs/plaemndclncijicmigphlnhdpjcfhbej">chrome
+            extension</a> to restore saved groups.
         </div>
 
-        <div id="confirmation" class="my-5">
+        <div id="permission" class="my-5 hidden">
+          Could not open bookmark because pop-ups were blocked.
+          Please allow popups for bitvictory.dev and refresh the page.
+        </div>
+
+        <div id="confirmation" class="my-5 hidden">
           <p class="mb-2">Are you sure you want to open the following urls:</p>
           <ul class="mb-2 mx-5 list-disc" id="confirmation-url-list"></ul>
           <p class="mb-2 mt-8">We remember your trusted bookmarks with a cookie.</p>
-          <button id="confirmation-btn" class="p-2 my-2 whitespace-nowrap border border-transparent rounded shadow text-sm text-white bg-pink-600 hover:bg-pink-700">Open bookmark</button>
+          <button id="confirmation-btn"
+            class="p-2 my-2 whitespace-nowrap border border-transparent rounded shadow text-sm text-white bg-pink-600 hover:bg-pink-700">
+            Open bookmark
+          </button>
         </div>
       </div>
+      <footer>
+        Created by
+        <a href="https://twitter.com/damien_jochim" target="_blank">@damien_jochim</a> and
+        <a href="https://twitetr.com/StefanBlamberg" target="_blank">@StefanBlamberg</a><br>
+        <a href="https://github.com/teambitvictory/somanytabs" target="_blank">Code</a> |
+        <a href="https://bitvictory.de/somanytabs/privacy.md" target="_blank">Privacy Policy</a> |
+        <a href="https://bitvictory.de/imprint.md" target="_blank">Imprint</a>
+      </footer>
     </div>
   </div>
   <script src="index.js"></script>
