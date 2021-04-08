@@ -11,7 +11,6 @@
   "content_scripts": [
     {
       "matches": [
-        "http://localhost:8081/*",
         "https://smt.bitvictory.dev/*"
       ],
       "js": [

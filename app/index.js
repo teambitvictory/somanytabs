@@ -21,6 +21,11 @@ const getOpenTabsCallback = (tabs) => () => {
 
 const awake = () => {
   const session = (new URLSearchParams(window.location.search)).get('session');
+  if (!session) {
+    show('landing');
+    return;
+  }
+
   const { tabs } = JSON.parse(decodeURIComponent(session));
   const openTabs = getOpenTabsCallback(tabs);
 
